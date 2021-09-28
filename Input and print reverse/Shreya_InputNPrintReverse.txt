@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+//Function Def
+int UserInput(int arr[]);
+void reverse( int arr[], int size);
+
+int UserInput(int arr[]){
+    int n;
+    static int size =0;
+    printf("User Input: ", size);
+    scanf("%d", &n);
+    if ( n == -111){
+        return size;
+    }
+    else{
+        arr[size] = n;
+        size++;
+        return UserInput(arr);
+    }
+}
+
+void reverse( int arr[], int size){
+    if (size > 0) {
+        size--;
+        printf("%d\t", arr[size]);
+        reverse(arr, size);
+    }
+}
+
+#define max_size 1024
+int main(){
+    int arr[max_size];
+    int size = 0;
+    size = UserInput(arr);
+    if ( size > 0){
+        reverse( arr , size);
+    }
+}
