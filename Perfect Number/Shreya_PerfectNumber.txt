@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+main()
+{
+    int i = 0;
+    int N;
+    int sum = 0;
+    printf("Enter the number to verify if its a perfect number:\t");
+    scanf("%d", &N);
+    for(i = 1 ; i < N ; i++){
+        if (N % i == 0){
+            sum = sum + i;
+        }
+    }
+    if(sum == N)
+        printf("The input number %d is a perfect number",N);
+    else
+        printf("The input number %d is not a perfect number",N);
+
+}
