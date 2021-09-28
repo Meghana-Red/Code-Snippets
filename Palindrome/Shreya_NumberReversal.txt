@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+main()
+{
+    int N,R;
+    int sum = 0;
+    printf("User Input for no. to be reversed:\t");
+    scanf("%d", &N);
+    while(N!=0){
+        R = N % 10;
+        N = N/10;
+        sum = sum*10 + R;
+    }
+    printf("The reversed no, is: \t%d",sum);
+}
