@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+int Check(int n, int i)
+{
+    if(i == 1)
+        return 1;   
+    else
+    {
+        if(n%i == 0)
+            return 0;
+        else
+            Check(n, i-1);   
+    }
+}
+
+int main()
+{
+    int num, prime;
+    printf("User Input (Prime):\t");
+    scanf("%d", &num);
+    prime = Check(num, num/2);
+    if(prime == 1)
+    {
+        printf("%d is a Prime number", num);
+    }
+    else
+    {
+        printf("%d is not a Prime number\n", num);
+    }
+    return 0;
+}
+
