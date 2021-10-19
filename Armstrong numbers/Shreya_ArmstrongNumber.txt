@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+#define MAX 100
+int main()
+{
+	int n ;
+	printf("User Input(Armstrong no.): ");
+	scanf("%d", &n);
+	int N = n;
+	printDigit(N,n);
+	return 0;
+}
+
+
+void printDigit(int N, int n)
+{
+	int arr[MAX];
+	int i = 0, sum = 0;
+	int j, r;
+
+	while (N != 0) {
+		r = N % 10;
+		arr[i] = r*r*r;
+		i++;
+		N = N / 10;
+	}
+
+	for (j = i - 1; j > -1; j--) {
+		sum = sum + arr[j];
+	}
+	if (n == sum)
+	    printf("%d is a Armstrong Number",n);
+	else
+	    printf("%d is not a Armstrong Number ",n);
+}
+
